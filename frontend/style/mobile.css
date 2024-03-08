@@ -1,0 +1,33 @@
+@media screen and (max-width: 500px) {
+    /* START PAGE */
+    .startPage .mainNav .game {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .startPage .mainNav .training {
+        grid-column: 2 / span 2;
+        grid-row: 1;
+    }
+    .startPage .mainNav .players {
+        grid-column: 2 / span 2;
+        grid-row: 2;
+    }
+    .startPage .mainNav .highscores {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .startPage .mainNav .protection {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    .startPage .mainNav .settings {
+        grid-column: 2 / span 2;
+        grid-row: 3;
+    }
+
+
+    /* FOOTER */
+    footer #clientId {
+        display: none;
+    }
+}

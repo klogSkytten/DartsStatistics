@@ -1,0 +1,13 @@
+:root {
+    --dark: 0, 0, 0;
+    --light: 255, 255, 255;
+    --accent: #E69100;
+    --accentH: 38;
+    --accentS: 100%;
+    --accentL: 45%;
+    --heart: rgb(180, 3, 47);
+    --beer: rgb(238, 202, 0);
+
+    
+    --accentCol: hsl(var(--accentH), var(--accentS), var(--accentL));
+}

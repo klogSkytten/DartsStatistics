@@ -1,0 +1,116 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darts Statistics</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.svg">
+    <link rel='stylesheet' href='/style/main.css' type='text/css' />
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer type="module" src="/func/communication.js"></script>
+</head>
+<body>
+    <!-- SYSTEM NAME -->
+    <div class="invisible" id="systemName">
+        <h1>Darts Statistics</h1>
+    </div>
+
+    <!-- STARTPAGE -->
+    <div class="main startPage">
+        <div class="mainNav">
+            <button class="mainButton game" type="button">
+                <i class="fa-solid fa-bullseye"></i>
+                <p>Spiel starten!</p>
+            </button>
+            <button class="mainButton training" type="button">
+                <i class="fa-solid fa-helmet-safety"></i>
+                <p>Training beginnen</p>                
+            </button>
+            <button class="mainButton players" type="button">
+                <i class="fa-solid fa-users-gear"></i>
+                <p>Spieler verwalten</p>                
+            </button>
+            <button class="mainButton highscores" type="button">
+                <i class="fa-solid fa-trophy"></i>
+                <p>Statistiken ansehen</p>                
+            </button>
+            <button class="mainButton protection" type="button">
+                <i class="fa-solid fa-lock"></i>
+                <p>Schreibschutz deaktivieren</p>                
+            </button>
+            <button class="mainButton settings" type="button">
+                <i class="fa-solid fa-gear"></i>
+                <p>Einstellungen ändern</p>
+            </button>
+        </div>
+    </div>
+
+    <!-- GAME PREFERENCES -->
+    <div class="main gamePrefs">
+
+    </div>
+
+    <!-- PLAYERS -->
+    <div class="main players">
+
+    </div>
+
+    <!-- HIGHSCORES -->
+    <div class="main highscores">
+
+    </div>
+
+    <!-- SETTINGS -->
+    <div class="main settings">
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="container">
+        <div class="columns">
+            <div class="column col-3 col-ml-auto text-right" id="user"></div>
+        </div>
+        <div class="columns">
+            <div class="column col-3 text-left" id="version">v0.1.0</div>
+            <div class="column col-6 text-center">CODED WITH <span class="fa-solid fa-heart"></span> AND <span class="fa-solid fa-beer-mug-empty"></span> BY <a href="https://klogblog.de/">KLOG</a></div>
+            <div class="column col-3 text-right" id="clientId"></div>
+        </div>
+    </footer>
+    
+    <!-- LOADING ANIMATION -->
+    <div class="active" id="startupAnimation">
+        <div class="loading loading-lg"></div>
+        <div class="connectionChain">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <span class="connectionChainArrow">
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+            </span>
+            <i class="fa-solid fa-server"></i>
+            <span class="connectionChainArrow">
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+            </span>
+            <i class="fa-solid fa-database"></i>
+        </div>
+    </div>
+
+    <!-- CONNECTION ERROR -->
+    <div class="toast toast-error" id="connectionLost">
+        Verbindung zum Server verloren!
+    </div>
+
+    <!-- MODAL -->
+    <dialog class="modal" id="firstStart">
+            <!--div class="form-group"></div>
+                <label class="form-label" for="systemPasswordInput"><b>System Passwort (optional)</b></label>
+                <input class="form-input" type="password" id="systemPasswordInput">
+                <label class="form-label" for="systemPasswordVerifyInput">Passwort bestätigen</label>
+                <input class="form-input" type="password" id="systemPasswordVerifyInput">
+            -->
+        <div class="modalFooter">
+            <button class="btn btn-primary submitInput"></button>
+        </div>
+    </dialog>
+</body>
+</html>

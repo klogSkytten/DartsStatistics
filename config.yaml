@@ -1,0 +1,50 @@
+---
+# GENERAL SETTINGS
+general:
+  lang: ''
+  systemName: Darts Statistics
+  accentColor: '#E69100'
+  password: false
+
+# GAMES
+games:
+  X01:
+    description: 'Der Klassiker, bei dem der Spieler gewinnt, der als erstes genau auf 0 Punkte kommt.'
+    # ATTRIBUTE: [DEFAULT_OPTION, [LIST, OF, ALL, OPTIONS]]
+    length: [501, [301, 501, 701, 901, 999]]
+    inType: ['straight in', ['straight in', 'double in', 'triple in', 'master in']]
+    outType: ['double out', ['straight out', 'double out', 'triple out', 'master out']]
+
+# TRAINING GAMES
+trainingGames:
+  Bullseye:
+    aim: [3, [3, 6, 9]]
+
+# STATISTICS
+statistics:
+  X01:
+    gamesPlayed: true
+    gamesWon: true
+    wonBreaks: false
+    looseBreaks: false
+    wonReBreaks: false
+    looseReBreaks: false
+    thrownDarts: true
+    thrownPoints: true
+    thrownPoints1stDart: false
+    thrownPoints1stDartCount: false
+    thrownPoints2ndDart: false
+    thrownPoints2ndDartCount: false
+    thrownPoints3rdDart: false
+    thrownPoints3rdDartCount: false
+    maxThrownPoints: true
+    maxThrownPointsCount: true
+    thrown26: false
+    thrown80+: false
+    thrown100+: false
+    thrown120+: false
+    thrown140+: false
+    thrown180: true
+    checkoutAttemps: false
+    checkoutMaxPoints: false
+...

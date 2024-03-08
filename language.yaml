@@ -1,0 +1,50 @@
+---
+# AVAILABLE LANGUAGES
+availLangs:
+  de: deutsch
+  en: english
+
+# PHRASES
+# [SITE].[ELEMENT].[LANGUAGE] = PHRASE
+firstStart:
+  headline:
+    de: Willkommen bei Darts Statistics!
+    en: Welcome to Darts Statistics!
+  description:
+    de: Das ist dein erster Start der WebApp und du musst noch ein paar grundlegende Dinge einstellen bevor du loslegen kannst. Du kannst sie später auch wieder ändern.
+    en: This is your first start of the WebApp and you still have to set a few basic things before you can get started. You can also change them again later.
+  systemName:
+    de: System Name
+    en: System Name
+  accentColor:
+    de: Akzentfarbe
+    en: Accent Color
+  password:
+    de: Passwort
+    en: Password
+  passwordRepeat:
+    de: Passwort wiederholen
+    en: repeat Password
+  button:
+    de: speichern
+    en: save
+
+mainNav:
+  game:
+    de: Spiel starten
+    en: Start Darting
+  training:
+    de: Training beginnen
+    en: Train Skills
+  players:
+    de: Spieler verwalten
+    en: Manage Players
+  highscores:
+    de: Statistiken ansehen
+    en: Show Highscores
+  protection:
+    de: Schreibschutz aufheben
+    en: Remove Protection
+  settings:
+    de: Einstellungen ändern
+    en: Change Settings

@@ -1,0 +1,47 @@
+/* GENERAL TO OVERWIRTE MODALS FROM SPECTRE FRAMEWORK*/
+:modal {
+    display: block;
+    opacity: 1;
+    width: 90%;
+    max-width: 800px;
+    padding: 10px 5%;
+    background-color: rgba(var(--light), 0.7);
+    color: rgb(var(--dark));
+    border: none;
+    border-radius: 10px;
+}
+.modal {
+    h3 {
+        text-align: center;
+        padding-bottom: 8px;
+        margin: 10px auto 20px;
+        width: 95%;
+        border-bottom: solid 2px var(--accent);
+    }
+    .modalFooter {
+        position: relative;
+        margin: 40px 0 10px;
+        height: 40px;
+        
+        .submitInput {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+    &#noLang {
+        h3, p, .modalFooter {
+            display: none;
+        }
+        .form-group {
+            display: grid;
+            grid-template-columns: 30% 30% 30%;
+            grid-gap: clamp(1rem, 5%, 1.5rem);
+            margin-top: 0.4rem;
+
+            .btn {
+                min-height: 50px;
+            }
+        }
+    }
+}

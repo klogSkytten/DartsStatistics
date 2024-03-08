@@ -1,0 +1,178 @@
+/* IMPORTS */
+@import "vars.css";
+@import "fa.min.css";
+@import "spectre.min.css";
+@import "modal.css";
+@import "startpage.css";
+@import "mobile.css";
+
+
+/* GENERAL */
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(var(--dark), 0.9);
+    background-image: url(../img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    color: rgb(var(--light));
+}
+a,
+a:active,
+a:focus,
+a:focus-within,
+a:target,
+a:visited,
+a:focus-visible {
+    text-decoration: none;
+    color: rgb(var(--light));
+}
+a:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+#systemName{
+    display: grid;
+    width: 100%;
+    height: 20%;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s linear;
+
+    &.invisible{
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+h1 {
+    color: var(--accent);
+    font-size: clamp(1rem, min(8vh, 9vw), 4rem);
+    text-shadow:    1px 1px 1px rgb(var(--light)),
+                    2px 1px 5px var(--accent),
+                    -2px -2px 0px rgb(var(--light));
+    margin: clamp(20px, 3%, 40px) 5% 0;
+    justify-self: center;
+    align-self: center;
+    transform: rotateZ(-5deg);
+}
+.main {
+    position: absolute;
+    top: 20%;
+    left: max(5%, calc(50% - 450px));
+    width: 90%;
+    max-width: 900px;
+    height: 70%;
+    transition: transform 2s ease-in-out; 
+}
+#startupAnimation {
+    position: absolute;
+    top: 40%;
+    left: calc(50% - 200px);
+    width: 400px;
+    font-size: 1rem;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 2s linear;
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .loading::after {
+        border-left-color: rgb(var(--light));
+        border-bottom-color: rgb(var(--light));
+    }
+    .connectionChain {
+        width: 80%;
+        margin: 1rem auto 0;
+        font-size: 2rem;
+        vertical-align: middle;
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        grid-template-rows: 100%;
+        align-items: center;
+        justify-items: center;
+    }
+    .connectionChainArrow {
+        position: relative;
+        font-size: 0.4rem;
+
+        &::after {
+            position: absolute;
+            top: calc(50% - 0.6rem - 0.05rem);
+            font: var(--fa-font-solid);
+            font-size: 1.2rem;
+            content: "\f0da";
+        }
+    }
+}
+#connectionLost {
+    position: absolute;
+    top: calc(50% - 1.25rem);
+    left: 0;
+    width: 100%;
+    min-height: 2.5rem;;
+    font-size: 1rem;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 2s linear;
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+
+/* FOOTER */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.5rem;
+    font-style: italic;
+
+    .fa-heart {
+        color: var(--heart);
+    }
+    .fa-beer-mug-empty {
+        color: var(--beer);
+    }
+}
+
+
+/* SPECTRE OVERWRITES */
+.btn.btn-primary{
+    border-color: var(--accent);
+    background-color: var(--accent);
+
+    &:active,
+    &:focus,
+    &:hover{
+        border-color: var(--accent);
+        background-color: var(--accent);
+        box-shadow: 0 0 5px rgb(var(--dark));
+    }
+}
+.form-input {
+    &.form-input-color {
+        padding: 0;
+        border: none;
+        background: transparent;
+    }
+    &:focus{
+        border-color: var(--accent);
+        box-shadow: 0 0 3px var(--accent);
+    }
+}
+.loading::after {
+    border-left-color: var(--accent);
+    border-bottom-color: var(--accent);
+}
