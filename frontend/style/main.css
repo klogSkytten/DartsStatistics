@@ -4,6 +4,8 @@
 @import "spectre.min.css";
 @import "modal.css";
 @import "startpage.css";
+@import "players.css";
+@import "gamePrefs.css";
 @import "mobile.css";
 
 
@@ -62,11 +64,19 @@ h1 {
 .main {
     position: absolute;
     top: 20%;
-    left: max(5%, calc(50% - 450px));
     width: 90%;
     max-width: 900px;
     height: 70%;
-    transition: transform 2s ease-in-out; 
+    transition: all 2s ease-in-out;
+
+    .btn.exit {
+        content: 'X';
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        border-radius: 0 50% 0 50%;
+        font-weight: bold;
+    }
 }
 #startupAnimation {
     position: absolute;
@@ -83,11 +93,6 @@ h1 {
         visibility: visible;
         opacity: 1;
     }
-
-    .loading::after {
-        border-left-color: rgb(var(--light));
-        border-bottom-color: rgb(var(--light));
-    }
     .connectionChain {
         width: 80%;
         margin: 1rem auto 0;
@@ -99,17 +104,9 @@ h1 {
         align-items: center;
         justify-items: center;
     }
-    .connectionChainArrow {
-        position: relative;
-        font-size: 0.4rem;
-
-        &::after {
-            position: absolute;
-            top: calc(50% - 0.6rem - 0.05rem);
-            font: var(--fa-font-solid);
-            font-size: 1.2rem;
-            content: "\f0da";
-        }
+    .loading::after {
+        border-left-color: rgb(var(--light));
+        border-bottom-color: rgb(var(--light));
     }
 }
 #connectionLost {
@@ -118,15 +115,45 @@ h1 {
     left: 0;
     width: 100%;
     min-height: 2.5rem;;
-    font-size: 1rem;
+    font-size: 2rem;
     text-align: center;
     visibility: hidden;
     opacity: 0;
     transition: opacity 2s linear;
+    z-index: 200;
 
+    p {
+        display: none;
+        width: clamp(20%, 12rem, 80%);
+        margin: 0 auto;
+        font-size: 2rem;
+        vertical-align: middle;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: 100%;
+        align-items: center;
+        justify-items: center;
+    }
     &.active {
         visibility: visible;
         opacity: 1;
+    }
+    &.toast-error p.lost {
+        display: grid;
+    }
+    &.toast-success p.re-established {
+        display: grid;
+    }
+}
+.connectionChainArrow {
+    position: relative;
+    font-size: 0.4rem;
+
+    &::after {
+        position: absolute;
+        top: calc(50% - 0.6rem - 0.05rem);
+        font: var(--fa-font-solid);
+        font-size: 1.2rem;
+        content: "\f0da";
     }
 }
 
@@ -145,6 +172,19 @@ footer {
     .fa-beer-mug-empty {
         color: var(--beer);
     }
+}
+
+
+/* CUSTOM SCROLLBAR */
+::-webkit-scrollbar {
+    width: 0.25rem;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
 }
 
 
@@ -172,7 +212,50 @@ footer {
         box-shadow: 0 0 3px var(--accent);
     }
 }
+.form-checkbox input:checked+.form-icon,
+.form-radio input:checked+.form-icon,
+.form-switch input:checked+.form-icon {
+    background: var(--accent);
+    border-color: var(--accent);
+}
 .loading::after {
     border-left-color: var(--accent);
     border-bottom-color: var(--accent);
+}
+input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+}
+input[type=range]::-webkit-slider-runnable-track {
+    background-color: rgba(var(--dark), 0.3);
+    border-radius: 0.1rem;
+    height: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -0.3rem;
+    background: var(--accent);
+    height: 0.8rem;
+    width: 0.8rem;
+    border-radius: 50%;
+}
+input[type=range]::-moz-range-track {
+    background-color: rgba(var(--dark), 0.3);
+    border-radius: 0.1rem;
+    height: 0.2rem;
+}
+input[type=range]::-moz-range-thumb {
+    margin-top: -0.3rem;
+    background: var(--accent);
+    height: 0.8rem;
+    width: 0.8rem;
+    border-radius: 50%;
 }

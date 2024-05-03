@@ -1,0 +1,259 @@
+/* GAME PREFERENCES PAGE */
+.main.game,
+.main.training {
+    background-color: rgba(var(--light), 0.7);
+    right: calc(0px - min(90%, 900px));;
+    transition: right 1s;
+    border-radius: 0.25rem;
+    border-top-right-radius: 1rem;
+    padding: 2rem 1rem;
+    overflow: hidden;
+
+    &.active {
+        right: max(5%, calc(50% - 450px));
+    }
+
+    nav {
+        position: relative;
+        border-right: solid 0.2rem var(--accent);
+        margin-right: 1rem;
+        width: 10rem;
+        max-width: 30%;
+        height: 100%;
+        float: left;
+
+        ul {
+            max-height: calc(100% - 6rem);
+            margin: 0px;
+            overflow-x: auto;
+            
+            li {
+                height: 2rem;
+                padding: 0.4rem 0.3rem 0.1rem 0.5rem;
+                margin-bottom: 0.5rem;
+                border-radius: 1.1rem 0 0 1.1rem;
+                list-style: none;
+                
+                &:has(a.selected) {
+                    background-color: rgba(var(--accentAlpha), 0.5);
+                    background: linear-gradient(90deg, rgba(var(--accentAlpha), 0.5) 0%, rgba(var(--accentAlpha), 0) 95%);
+                    font-weight: bold;
+                }
+
+                a,
+                a:hover {
+                    color: rgb(var(--dark));
+                }
+            }
+        }
+
+        .buttonGroup {
+            width: 95%;
+            position: absolute;
+            bottom: 0;
+
+            button {
+                width: 100%;
+                margin-top: 0.2rem;
+                color: rgb(var(--accentAlpha));
+                border-color: rgb(var(--accentAlpha));
+
+                &:active {
+                    background-color: rgb(var(--light));
+                }
+            }
+        }
+    }
+    
+    .panel {
+        position: relative;
+        margin-right: 1rem;
+        height: 100%;
+        color: rgb(var(--dark));
+        border: none;
+
+        &.invisible {
+            visibility: hidden;
+        }
+
+        .panel-nav {
+            font-weight: bold;
+            
+            .tab {
+                border: none;
+
+                a.active {
+                    border-color: var(--accent);
+                    color: var(--accent);
+                }
+                a:hover {
+                    color: var(--accent);
+                }
+            }
+        }
+
+        .panel-body {
+            margin-top: 1rem;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            
+            .panelBodyContainer {
+                position: absolute;
+                top: 0;
+                width: 300%;
+                height: 100%;
+                display: flex;
+                flex-direction: row;
+                transition: left 0.5s;
+
+                div:not(.btn-group) {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    padding: 0 0.5rem 2.5rem;
+                    margin: 0;
+                    
+                    p {
+                        margin: 0 0 1rem;
+                        padding: 0;
+
+                        &.description {
+                            width: 100%;
+                        }
+                        &.form-label {
+                            margin: 0;
+                            padding: 0.4rem 0 0;
+                            font-weight: bold;
+                            min-height: 2rem;
+                            display: inline-block;
+                            width: 30%;
+                        }
+                        &.formValue {
+                            margin: 0;
+                            padding: 0.4rem 0.8rem 0 0;
+                            min-height: 2rem;
+                            text-align: right;
+                            display: inline-block;
+                            width: 5%;
+                        }
+                    }
+                    input.slider {
+                        display: inline-block;
+                        width: 65%;
+                    }
+                    .btn-group {
+                        padding: 0;
+                        width: 65%;
+                        float: right;
+                        
+                        button {
+                            margin: 1px;
+                            background-color: rgb(var(--light));
+                            border-color: var(--accent);
+                            color: var(--accent);
+
+                            &.active {
+                                background-color: var(--accent);
+                                color: rgb(var(--light));
+                            }
+                        }
+                    }
+                    &.playerSummaryContainer {
+                        height: 1.5rem;
+                        padding-bottom: 0;
+                        margin-bottom: 0.5rem;
+                    }
+                    &.playerList {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 0.4rem;
+                        overflow-y: scroll;
+                        height: auto;
+                        max-height: calc(100% - 2rem);
+                        padding: 0;
+
+                        .playerCard {
+                            width: calc(20% - 0.4rem);
+                            height: auto;
+                            padding: 0.1rem;
+                            text-align: center;
+                            background-color: rgba(230, 145, 0, 0.2);
+                            border-top: solid 0.1rem var(--accent);
+                            border-left: solid 0.1rem var(--accent);
+                            border-top-left-radius: 0.4rem;
+                            border-bottom-right-radius: 0.4rem;
+                            box-shadow: 0.1rem 0.1rem 0.3rem var(--accent);
+
+                            &:not(.selected) {
+                                background-color: transparent;
+                                border-top: solid 0.1rem rgba(var(--dark), 0.4);
+                                border-left: solid 0.1rem rgba(var(--dark), 0.4);
+                                box-shadow: 0.1rem 0.1rem 0.3rem rgb(var(--dark));
+                            }
+                            .avatar {
+                                width: 4rem;
+                                height: 4rem;
+                            }
+                            p {
+                                margin: 0.2rem 0 0;
+                            
+                                &.playerName {
+                                    font-weight: bold;
+                                }
+                                &.playerNick {
+                                    font-style: italic;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .panel-footer {
+                button {
+                    position: absolute;
+                    bottom: 0;
+                    display: block;
+                    
+                    &.panelBack {
+                        left: 0;
+                    }
+                    &.panelContinue,
+                    &.panelStart {
+                        right: 0;
+                    }
+                }
+            }
+
+            &.gameGeneral {
+                .panelBodyContainer {
+                    left: 0%;
+                }
+
+                .panel-footer button.panelBack,
+                .panel-footer button.panelStart {
+                    display: none;
+                }
+            }
+            &.gamePlayers {
+                .panelBodyContainer {
+                    left: -100%;
+                }
+
+                .panel-footer button.panelStart {
+                    display: none;
+                }
+            }
+            &.gameStart {
+                .panelBodyContainer {
+                    left: -200%;
+                }
+
+                .panel-footer button.panelContinue {
+                    display: none;
+                }
+            }
+        }
+    }
+}

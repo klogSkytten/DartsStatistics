@@ -19,7 +19,7 @@ function getPhrases (langFile, phraseTag, currLang) {
 //////////////////////////////////////////////////////////////////////
 // SHRINK PHRASES OBJECT TO CURRENT LANGUAGE
 //////////////////////////////////////////////////////////////////////
-function shrinkPhrasesObj(phrasesObj, phraseTag, currLang) {
+function shrinkPhrasesObj(phrasesObj, phraseTag, currLang) {    
     // CHECK IF CURRENT LANGUAGE IS ALREADY SELECTED
     if (currLang !== '') {
         // GET ELEMENT LIST DEPENDEND ON PHRASETAG
@@ -32,7 +32,7 @@ function shrinkPhrasesObj(phrasesObj, phraseTag, currLang) {
                 // SELECT BY KEY
                 elemList = phraseTag;
         }
-        
+
         // ITERATE OVER OBJECT LIST
         for (const elem in phrasesObj[elemList]) {
             // OVERWRITE OBJECT WITH CURRENT LANGUAGE

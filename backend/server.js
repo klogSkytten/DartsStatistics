@@ -47,4 +47,11 @@ communication.on('connection', (conn) => {
         config.set.newProps = data;
         configuration.saveConfig(config.file, config.set);
     });
+
+    // LANGUAGE REQUEST
+    conn.on('LANG', data => {
+        // GET LANGUAGE PHRASES AND RESPONSE IT
+        let langResp = config.set.lang = language.getPhrases (config.langFile, data[0], data[1]);
+        conn.emit('LANG', [data[0], langResp]);
+    })
 })

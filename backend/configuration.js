@@ -31,8 +31,9 @@ function getConfig (confSet) {
         if (Object.keys(set.newProps).length > 0) {
             set.command = 'updated';
             console.log('  -> Configuration updated');
+            
             // SAVE CONFIGURATION SET TO YAML FILE
-            //saveConfig (filePath, set);
+            saveConfig (filePath, set);
         }
     }
     return set;
@@ -96,6 +97,17 @@ function saveConfig (confFile, confSet) {
     if (confSet.hasOwnProperty('newProps')) {
         // MERGE CONFIGURATION SET PROPERTIES
         confSet.data = compareConfigSets(confSet.data, confSet.newProps, 'merge');
+        
+        // CREATE USERDATA DIRECTORY IF IT DOES NOT EXIST YET
+        const userDir = confFile.replace('/config.yaml', '')
+        try {
+            if (!fs.existsSync(userDir)) {
+                fs.mkdirSync(userDir);
+                console.log('Created userdata directory');
+            }
+        } catch (err) {
+            console.error(err);
+        }
         
         // WRITE CONFIGURATION SET TO YAML FILE
         fs.writeFileSync(confFile, yaml.dump(confSet.data), 'utf8');

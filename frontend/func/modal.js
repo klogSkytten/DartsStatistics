@@ -1,4 +1,6 @@
+/////////////////////////////////////////////////////////////////////////////
 // SHOW CONFIGURATION MODAL
+/////////////////////////////////////////////////////////////////////////////
 function showConfigModal (confSet, ioConn) {
     // DECLARE MODAL ELEMENTS
     const modal = document.querySelector('.modal');
@@ -28,7 +30,7 @@ function showConfigModal (confSet, ioConn) {
                 const btn = document.createElement('button');
                 btn.classList.add('btn', 'btn-primary');
                 btn.innerHTML = confSet.lang.availLangs[lang].toUpperCase();
-                btn.addEventListener('click', function(){
+                btn.addEventListener('click', () => {
                     // SAVE LANGUAGE
                     confSet.data.general.lang = lang;
 
@@ -50,7 +52,6 @@ function showConfigModal (confSet, ioConn) {
             headline.innerHTML = confSet.lang.firstStart.headline[lang];
             description.innerHTML = confSet.lang.firstStart.description[lang];
             mainCntnt.classList.add('form-group');
-            console.log(confSet);
             
             // FORMULAR FIELDS
             for (const prop in confSet.data.general) {
@@ -85,6 +86,10 @@ function showConfigModal (confSet, ioConn) {
                         inp.addEventListener('input', function() {
                             // CHANGE COLOR ACCORDING TO USER SELECTION
                             document.querySelector(':root').style.setProperty('--accent', this.value);
+                            document.querySelector(':root').style.setProperty('--accentAlpha',
+                                                [parseInt(this.value.substring(1, 3), 16),
+                                                 parseInt(this.value.substring(3, 5), 16),
+                                                 parseInt(this.value.substring(5, 7), 16)]); 
                         });
                         break;
                 }
@@ -99,13 +104,14 @@ function showConfigModal (confSet, ioConn) {
             button.addEventListener('click', function() {
                 // SAVE CONFIG AND CLOSE MODAL
                 saveConfigData (ioConn, lang);
-                closeModal(modal);
+                closeModal(modal, confSet);
             });
             footer.appendChild(button);
             break;
 
         // UPDATED 
         case 'updated':
+            console.log('TODO!!!');
             modal.id = 'updated';
             headline.innerHTML = 'Es gibt Neuigkeiten!';
             description.innerHTML = 'Ein neues Update ist eingespielt worden. Folgende Features sind hinzugefügt worden';
@@ -142,7 +148,10 @@ function showConfigModal (confSet, ioConn) {
     modal.showModal();
 }
 
+
+/////////////////////////////////////////////////////////////////////////////
 // SAVE CONFIGURATION DATA
+/////////////////////////////////////////////////////////////////////////////
 function saveConfigData (io, language) {
     const confModalForms = document.querySelector('.modal .form-group');
     let data = {general: Object()};
@@ -161,15 +170,33 @@ function saveConfigData (io, language) {
     }
 }
 
+
+/////////////////////////////////////////////////////////////////////////////
 // FADE IN START PAGE
-function closeModal (modal) {
+/////////////////////////////////////////////////////////////////////////////
+function closeModal (modal, confSet) {
     // CLOSE MODAL
     modal.close();
     
     // FADE IN START PAGE
     const startPage = document.querySelector('.startPage');
     startPage.classList.add('active');
+
+    // SET PHRASE FOR MAIN NAVIGATION BUTTONS (ONLY IF CONFIGURATION SET IS GIVEN)
+    if (arguments.length === 2) {
+        const langPhrases = confSet.lang.mainNav;
+        const lang = confSet.data.general.lang;
+        const btnList = document.querySelectorAll('.mainNav .mainButton');
+        for (let b = 0; b < btnList.length; b++) {
+            let elemName = btnList[b].className.replace('mainButton ', '');
+            let elem = document.querySelector('.mainNav .mainButton.' + elemName + ' p');
+            elem.innerHTML = langPhrases[elemName][lang];
+        }
+    }
 }
 
+
+/////////////////////////////////////////////////////////////////////////////
 // FUNCTION EXPORT
+/////////////////////////////////////////////////////////////////////////////
 export {showConfigModal};

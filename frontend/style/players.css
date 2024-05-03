@@ -1,0 +1,114 @@
+/* PLAYERS PAGE */
+.main.players {
+    background-color: rgba(var(--light), 0.7);
+    left: calc(0px - min(90%, 900px));
+    transition: left 1s;
+    border-radius: 0.25rem;
+    border-top-right-radius: 1rem;
+    padding: 2rem 1rem;
+    overflow: hidden;
+
+    &.active {
+        left: max(5%, calc(50% - 450px));
+    }
+
+    nav {
+        border-right: solid 0.2rem var(--accent);
+        margin-right: 1rem;
+        max-width: 30%;
+        height: 100%;
+        float: left;
+
+        button.playerAdd {
+            color: rgb(var(--dark));
+            background-color: rgba(var(--accentAlpha), 0.2);
+            height: 2rem;
+            border-radius: 1rem;
+            border-color: var(--accent);
+            margin-bottom: 1rem;
+            margin-right: 0.2rem;
+        }
+
+        ul {
+            max-height: calc(100% - 3rem);
+            margin: 0px;
+            overflow-x: auto;
+            
+            li {
+                padding: 0.1rem 0.3rem 0.1rem 0.1rem;
+                margin-bottom: 0.5rem;
+                border-radius: 1.1rem 0 0 1.1rem;
+                list-style: none;
+                
+                &:has(a.selected) {
+                    background-color: rgba(var(--accentAlpha), 0.5);
+                    background: linear-gradient(90deg, rgba(var(--accentAlpha), 0.5) 0%, rgba(var(--accentAlpha), 0) 95%);
+                    font-weight: bold;
+                }
+
+                .avatar {
+                    float: left;
+                    height: 2rem;
+                    width: 2rem;
+                }
+                .playerName {
+                    color: rgb(var(--dark));
+                    height: 1.5rem;
+                    line-height: 1.5rem;
+                    padding-left: 2.8rem;
+                    margin: 0px;
+                    font-size: 1.2rem;
+                }
+                .playerNick {
+                    color: rgb(var(--dark));
+                    height: 0.5rem;
+                    line-height: 0.5rem;
+                    padding-left: 2.8rem;
+                    margin: 0px;
+                    font-size: 0.4rem;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+    
+    .panel {
+        position: relative;
+        margin-right: 1rem;
+        height: 100%;
+        color: rgb(var(--dark));
+        border: none;
+        
+        .form-group div {
+            margin-top: 0.5rem;
+
+            .form-group div,
+            .form-group div p {
+                height: 2rem;
+            }
+        }
+        figure {
+            min-height: 5rem;
+            height: auto;
+            max-height: 70%;
+            min-width: 5rem;
+            width: auto;
+            max-width: 70%;
+            border-radius: 1rem;
+            font-size: 2rem;
+            margin-top: 0.5rem;
+        
+            & .avatar {
+                aspect-ratio: 1;
+                img {
+                    border-radius: 1rem;
+                }
+            }
+        }
+        button {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+    }
+}

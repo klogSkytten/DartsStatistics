@@ -48,3 +48,79 @@ mainNav:
   settings:
     de: Einstellungen ändern
     en: Change Settings
+
+players:
+  playerAdd:
+    de: Spieler hinzufügen
+    en: add Player
+  currPlayerName:
+    de: Name
+    en: Name
+  currPlayerLastName:
+    de: Nachname
+    en: Last Name
+  currPlayerNickName:
+    de: Spitzname
+    en: Nick Name
+  currPlayerAvatar:
+    de: Profilbild
+    en: Avatar
+  currPlayerLogo:
+    de: Logo
+    en: Logo
+  currPlayerColor:
+    de: Farbe
+    en: Color
+  currContrastColor:
+    de: Kontrastfarbe
+    en: Contrast Color
+  contrastDark:
+    de: dunkel
+    en: dark
+  contrastLight:
+    de: hell
+    en: light
+  playerSave:
+    de: speichern
+    en: save
+
+game:
+  gameLoad:
+    de: Spiel laden
+    en: load Game
+  gameSeries:
+    de: Spielserie erstellen
+    en: create Game Series
+  gameTournament:
+    de: Turnier erstellen
+    en: create Tournament
+  gameGeneral:
+    de: Einstellungen
+    en: Preferences
+  gamePlayers:
+    de: Spieler
+    en: Players
+  gameStart:
+    de: Spielbeginn
+    en: Game Start
+  X01_description:
+    de: 'Der Klassiker, bei dem der Spieler gewinnt, der als erstes genau auf 0 Punkte kommt.'
+    en: 'The classic game in which the first player to reach exactly 0 points wins.'
+  X01_sets:
+    de: zu gewinnende Sets
+    en: number of winning Sets
+  X01_legs:
+    de: zu gewinnende Legs
+    en: number of winning  Legs
+  X01_length:
+    de: Länge
+    en: Length
+  X01_inType:
+    de: Start Bedingung
+    en: Start Condition
+  X01_outType:
+    de: Checkout Bedingung
+    en: Checkout Condition
+  playerSummaryLabel:
+    de: Spieler ausgewählt
+    en: Players selected
