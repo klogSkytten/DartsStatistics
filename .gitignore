@@ -1,3 +1,7 @@
+# USERDEFINED
+/userdata/*
+!/userdata/readme.txt
+
 # Logs
 logs
 *.log
