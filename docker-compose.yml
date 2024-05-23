@@ -1,5 +1,3 @@
-version: '3.4'
-
 services:
   dartsstatistics:
     image: dartsstatistics
@@ -10,8 +8,19 @@ services:
       NODE_ENV: production
     ports:
       - 9999:9000
+    depends_on:
+      - db
 
-#  db:
-#    image: mariadb:11.4-rc 
-#    environment:
-#      MARIADB_ROOT_PASSWORD: example
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: tRyP6po*fc2sA$
+  
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 9995:80
+    depends_on:
+      - db

@@ -5,6 +5,7 @@ const express = require('express');
 const socket = require('socket.io');
 const configuration = require('./configuration');
 const language = require('./language');
+const db = require('./database');
 
 // DECLARATION OF CONSTANTS AND INSTANCES
 let config = Object();
@@ -23,6 +24,24 @@ server.listen(port, function(){
 
     // SHOW HTML PAGE
     app.use(express.static(htmlPath));
+
+    // CONNECT TO DATABASE
+    db.connection.connect(function(err) {
+        if (err) throw err;
+        console.log("Connection to MySQL established!");
+        
+        // INITIALIZE DATABASES IF NECCESSARY
+        console.log("Checking Databases.");
+        db.connection.query('CREATE DATABASE IF NOT EXISTS DS_games', function (err) {
+            if (err) throw err;
+        });
+        db.connection.query('CREATE DATABASE IF NOT EXISTS DS_players', function (err) {
+            if (err) throw err;
+        });
+        db.connection.query('CREATE DATABASE IF NOT EXISTS DS_settings', function (err) {
+            if (err) throw err;
+        });
+    });
 })
 
 // COMMUNICATION FUNTIONS
