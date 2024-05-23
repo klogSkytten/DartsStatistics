@@ -22,6 +22,13 @@ html, body {
     background-size: cover;
     background-blend-mode: multiply;
     color: rgb(var(--light));
+
+    .fullscreen {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
 }
 a,
 a:active,

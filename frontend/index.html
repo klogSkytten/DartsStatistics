@@ -10,366 +10,373 @@
     <script defer type="module" src="/func/function.js"></script>
 </head>
 <body>
-    <!-- SYSTEM NAME -->
-    <div class="invisible" id="systemName">
-        <h1>Darts Statistics</h1>
-    </div>
-
-    <!-- STARTPAGE -->
-    <div class="main startPage">
-        <div class="mainNav">
-            <button class="mainButton game" type="button">
-                <i class="fa-solid fa-bullseye"></i>
-                <p>Spiel starten!</p>
-            </button>
-            <!-- <button class="mainButton training" type="button">
-                <i class="fa-solid fa-helmet-safety"></i>
-                <p>Training beginnen</p>                
-            </button> -->
-            <button class="mainButton players" type="button">
-                <i class="fa-solid fa-users-gear"></i>
-                <p>Spieler verwalten</p>                
-            </button>
-            <!-- <button class="mainButton highscores" type="button">
-                <i class="fa-solid fa-trophy"></i>
-                <p>Statistiken ansehen</p>                
-            </button>
-            <button class="mainButton protection" type="button">
-                <i class="fa-solid fa-lock"></i>
-                <p>Schreibschutz deaktivieren</p>                
-            </button>
-            <button class="mainButton settings" type="button">
-                <i class="fa-solid fa-gear"></i>
-                <p>Einstellungen ändern</p>
-            </button> -->
+    <div class="fullscreen">
+        <!-- SYSTEM NAME -->
+        <div class="invisible" id="systemName">
+            <h1>Darts Statistics</h1>
         </div>
-    </div>
 
-    <!-- GAME PREFERENCES -->
-    <div class="main game training">
-        <button class="btn btn-lg btn-error exit">X</button>
-        <nav>
-            <ul class="gameList"></ul>
-            <div class="buttonGroup">
-                <button class="btn gameLoad disabled">Spiel laden</button>
-                <button class="btn gameSeries disabled">Spielserie erstellen</button>
-                <button class="btn gameTournament disabled">Turnier erstellen</button>
+        <!-- STARTPAGE -->
+        <div class="main startPage">
+            <div class="mainNav">
+                <button class="mainButton game" type="button">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <p>Spiel starten!</p>
+                </button>
+                <!-- <button class="mainButton training" type="button">
+                    <i class="fa-solid fa-helmet-safety"></i>
+                    <p>Training beginnen</p>                
+                </button> -->
+                <button class="mainButton players" type="button">
+                    <i class="fa-solid fa-users-gear"></i>
+                    <p>Spieler verwalten</p>                
+                </button>
+                <!-- <button class="mainButton highscores" type="button">
+                    <i class="fa-solid fa-trophy"></i>
+                    <p>Statistiken ansehen</p>                
+                </button>
+                <button class="mainButton protection" type="button">
+                    <i class="fa-solid fa-lock"></i>
+                    <p>Schreibschutz deaktivieren</p>                
+                </button>
+                <button class="mainButton settings" type="button">
+                    <i class="fa-solid fa-gear"></i>
+                    <p>Einstellungen ändern</p>
+                </button> -->
             </div>
-        </nav>
-        <div class="panel">
-            <div class="panel-nav">
-                <ul class="tab tab-block">
-                    <li class="tab-item">
-                        <a class="gameGeneral">Einstellungen</a>
+        </div>
+
+        <!-- GAME PREFERENCES -->
+        <div class="main game training">
+            <button class="btn btn-lg btn-error exit">X</button>
+            <nav>
+                <ul class="gameList"></ul>
+                <div class="buttonGroup">
+                    <button class="btn gameLoad disabled">Spiel laden</button>
+                    <button class="btn gameSeries disabled">Spielserie erstellen</button>
+                    <button class="btn gameTournament disabled">Turnier erstellen</button>
+                </div>
+            </nav>
+            <div class="panel">
+                <div class="panel-nav">
+                    <ul class="tab tab-block">
+                        <li class="tab-item">
+                            <a class="gameGeneral">Einstellungen</a>
+                        </li>
+                        <li class="tab-item">
+                            <a class="gamePlayers">Spieler</a>
+                        </li>
+                        <li class="tab-item">
+                            <a class="gameStart">Spielbeginn</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="panelBodyContainer">
+                        <div class="gameGeneral"></div>
+                        <div class="gamePlayers">
+                            <div class="playerSummaryContainer">
+                                <span class="playerSummaryValue">0</span>
+                                <span class="playerSummaryLabel">Spieler ausgewählt</span>
+                            </div>
+                            <div class="playerList">
+                                <div class="playerCard p_001 selected">
+                                    <div class="avatar badge" data-initial="HA" data-badge="1"></div>
+                                    <p class="playerName">Hans</p>
+                                    <p class="playerNick">Shotgun</p>
+                                </div>
+                                <div class="playerCard p_002">
+                                    <div class="avatar badge" data-initial="LA" data-badge="1"></div>
+                                    <p class="playerName">Lars</p>
+                                    <p class="playerNick">SuperSpin</p>
+                                </div>
+                                <div class="playerCard p_003">
+                                    <div class="avatar badge" data-initial="ML" data-badge="1"></div>
+                                    <p class="playerName">Max</p>
+                                    <p class="playerNick"></p>
+                                </div>
+                                <div class="playerCard p_004">
+                                    <div class="avatar badge" data-initial="ML" data-badge="1"></div>
+                                    <p class="playerName">Michel</p>
+                                    <p class="playerNick">ImBÄRator</p>
+                                </div>
+                                <div class="playerCard p_005 selected">
+                                    <div class="avatar badge" data-badge="85"></div>
+                                    <p class="playerName">Garry</p>
+                                    <p class="playerNick">Flying Scotsman</p>
+                                </div>
+                                <div class="playerCard p_006">
+                                    <div class="avatar badge" data-initial="LH" data-badge="99"></div>
+                                    <p class="playerName">Luke</p>
+                                    <p class="playerNick">Cool Hand Luke</p>
+                                </div>
+                                <div class="playerCard p_007">
+                                    <div class="avatar badge" data-initial="DvB" data-badge="88"></div>
+                                    <p class="playerName">Dimitri</p>
+                                    <p class="playerNick">The Dreammaker</p>
+                                </div>
+                                <div class="playerCard p_008 selected">
+                                    <div class="avatar badge" data-initial="GP" data-badge="91"></div>
+                                    <p class="playerName">Gerwin</p>
+                                    <p class="playerNick">The Iceman</p>
+                                </div>
+                                <div class="playerCard p_009">
+                                    <div class="avatar badge" data-initial="PW" data-badge="89"></div>
+                                    <p class="playerName">Peter</p>
+                                    <p class="playerNick">Snakebite</p>
+                                </div>
+                                <div class="playerCard p_010">
+                                    <div class="avatar badge" data-initial="MS" data-badge="90"></div>
+                                    <p class="playerName">Martin</p>
+                                    <p class="playerNick">The Wall</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gameStart">
+                            Anfang
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn btn-primary panelAction panelBack fa-solid fa-arrow-left"></button>
+                        <button class="btn btn-primary panelAction panelContinue fa-solid fa-arrow-right"></button>
+                        <button class="btn btn-success panelAction panelStart fa-solid fa-bullseye"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PLAYERS -->
+        <div class="main players">
+            <button class="btn btn-lg btn-error exit">X</button>
+            <nav>
+                <button class="btn playerAdd">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>Spieler hinzufügen</span>
+                </button>
+                <ul class="playerList">
+                    <li>
+                        <a class="p_001">
+                            <div class="avatar badge" data-initial="HA" data-badge="1"></div>
+                            <p class="playerName">Hans</p>
+                            <p class="playerNick">Shotgun</p>
+                        </a>
                     </li>
-                    <li class="tab-item">
-                        <a class="gamePlayers">Spieler</a>
+                    <li>
+                        <a class="p_002">
+                            <div class="avatar badge" data-initial="LA" data-badge="1"></div>
+                            <p class="playerName">Lars</p>
+                            <p class="playerNick">SuperSpin</p>
+                        </a>
                     </li>
-                    <li class="tab-item">
-                        <a class="gameStart">Spielbeginn</a>
+                    <li>
+                        <a class="p_003">
+                            <div class="avatar badge" data-initial="ML" data-badge="1"></div>
+                            <p class="playerName">Max</p>
+                            <p class="playerNick"></p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="p_004">
+                            <div class="avatar badge" data-initial="ML" data-badge="1"></div>
+                            <p class="playerName">Michel</p>
+                            <p class="playerNick">ImBÄRator</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="p_005">
+                            <div class="avatar badge" data-badge="85"></div>
+                            <p class="playerName">Garry</p>
+                            <p class="playerNick">Flying Scotsman</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="p_006">
+                            <div class="avatar badge" data-initial="LH" data-badge="99"></div>
+                            <p class="playerName">Luke</p>
+                            <p class="playerNick">Cool Hand Luke</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="p_007">
+                            <div class="avatar badge" data-initial="DvB" data-badge="88"></div>
+                            <p class="playerName">Dimitri</p>
+                            <p class="playerNick">The Dreammaker</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="p_008">
+                            <div class="avatar badge" data-initial="GP" data-badge="91"></div>
+                            <p class="playerName">Gerwin</p>
+                            <p class="playerNick">The Iceman</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="p_009">
+                            <div class="avatar badge" data-initial="PW" data-badge="89"></div>
+                            <p class="playerName">Peter</p>
+                            <p class="playerNick">Snakebite</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="p_010">
+                            <div class="avatar badge" data-initial="MS" data-badge="90"></div>
+                            <p class="playerName">Martin</p>
+                            <p class="playerNick">The Wall</p>
+                        </a>
                     </li>
                 </ul>
+            </nav>
+            <div class="panel">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-4 col-sm-12">
+                            <div class="col-12">                            
+                                <figure class="avatar playerAvatar" data-initial="NN">
+                                </figure>
+                            </div>
+                            <div class="col-12">
+                                <figure class="playerLogo">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-12">
+                            <div class="form-group">
+                                <div class="col-3">
+                                    <label class="form-label currPlayerName" for="currPlayerName">Name</label>
+                                </div>
+                                <div class="col-9">
+                                    <input class="form-input" type="text" id="currPlayerName" placeholder="Name">
+                                </div>
+                                <div class="col-3">
+                                    <label class="form-label currPlayerLastName" for="currPlayerLastName">Nachname</label>
+                                </div>
+                                <div class="col-9">
+                                    <input class="form-input" type="text" id="currPlayerLastName" placeholder="Nachname">
+                                </div>
+                                <div class="col-3">
+                                    <label class="form-label currPlayerNickName" for="currPlayerNickName">Spitzname</label>
+                                </div>
+                                <div class="col-9">
+                                    <input class="form-input" type="text" id="currPlayerNickName" placeholder="Spitzname">
+                                </div>
+                                <div class="col-3">
+                                    <label class="form-label currPlayerAvatar" for="currPlayerAvatar">Avatar</label>
+                                </div>
+                                <div class="col-9">
+                                    <input class="form-input" type="file" id="currPlayerAvatar" accept="image/*">
+                                </div>
+                                <div class="col-3">
+                                    <label class="form-label currPlayerLogo" for="currPlayerLogo">Logo</label>
+                                </div>
+                                <div class="col-9">
+                                    <input class="form-input" type="file" id="currPlayerLogo" accept="image/*">
+                                </div>
+                                <div class="col-3">
+                                    <label class="form-label currPlayerColor" for="currPlayerColor">Farbe</label>
+                                </div>
+                                <div class="col-9">
+                                    <input class="form-input form-input-color" type="color" id="currPlayerColor">
+                                </div>
+                                <div class="col-3">
+                                    <p class="form-label currContrastColor">Kontrastfarbe</p>
+                                </div>
+                                <div class="col-9">
+                                    <span class="form-group">
+                                        <label class="form-radio form-inline contrastDark">
+                                            <input type="radio" name="contrast" checked=""><i class="form-icon"></i><span>dunkel</span>
+                                        </label>
+                                        <label class="form-radio form-inline contrastLight">
+                                            <input type="radio" name="contrast"><i class="form-icon"></i><span>hell</span>
+                                        </label>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <button class="btn btn-primary playerSave disabled">
+                    <span>Speichern</span>
+                </button>
             </div>
-            <div class="panel-body">
-                <div class="panelBodyContainer">
-                    <div class="gameGeneral"></div>
-                    <div class="gamePlayers">
-                        <div class="playerSummaryContainer">
-                            <span class="playerSummaryValue">0</span>
-                            <span class="playerSummaryLabel">Spieler ausgewählt</span>
-                        </div>
-                        <div class="playerList">
-                            <div class="playerCard p_001 selected">
-                                <div class="avatar badge" data-initial="HA" data-badge="1"></div>
-                                <p class="playerName">Hans</p>
-                                <p class="playerNick">Shotgun</p>
-                            </div>
-                            <div class="playerCard p_002">
-                                <div class="avatar badge" data-initial="LA" data-badge="1"></div>
-                                <p class="playerName">Lars</p>
-                                <p class="playerNick">SuperSpin</p>
-                            </div>
-                            <div class="playerCard p_003">
-                                <div class="avatar badge" data-initial="ML" data-badge="1"></div>
-                                <p class="playerName">Max</p>
-                                <p class="playerNick"></p>
-                            </div>
-                            <div class="playerCard p_004">
-                                <div class="avatar badge" data-initial="ML" data-badge="1"></div>
-                                <p class="playerName">Michel</p>
-                                <p class="playerNick">ImBÄRator</p>
-                            </div>
-                            <div class="playerCard p_005 selected">
-                                <div class="avatar badge" data-badge="85"></div>
-                                <p class="playerName">Garry</p>
-                                <p class="playerNick">Flying Scotsman</p>
-                            </div>
-                            <div class="playerCard p_006">
-                                <div class="avatar badge" data-initial="LH" data-badge="99"></div>
-                                <p class="playerName">Luke</p>
-                                <p class="playerNick">Cool Hand Luke</p>
-                            </div>
-                            <div class="playerCard p_007">
-                                <div class="avatar badge" data-initial="DvB" data-badge="88"></div>
-                                <p class="playerName">Dimitri</p>
-                                <p class="playerNick">The Dreammaker</p>
-                            </div>
-                            <div class="playerCard p_008 selected">
-                                <div class="avatar badge" data-initial="GP" data-badge="91"></div>
-                                <p class="playerName">Gerwin</p>
-                                <p class="playerNick">The Iceman</p>
-                            </div>
-                            <div class="playerCard p_009">
-                                <div class="avatar badge" data-initial="PW" data-badge="89"></div>
-                                <p class="playerName">Peter</p>
-                                <p class="playerNick">Snakebite</p>
-                            </div>
-                            <div class="playerCard p_010">
-                                <div class="avatar badge" data-initial="MS" data-badge="90"></div>
-                                <p class="playerName">Martin</p>
-                                <p class="playerNick">The Wall</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gameStart">
-                        Anfang
-                    </div>
-                </div>
-                <div class="panel-footer">
-                    <button class="btn btn-primary panelAction panelBack fa-solid fa-arrow-left"></button>
-                    <button class="btn btn-primary panelAction panelContinue fa-solid fa-arrow-right"></button>
-                    <button class="btn btn-success panelAction panelStart fa-solid fa-bullseye"></button>
-                </div>
+        </div>
+
+        <!-- HIGHSCORES -->
+        <!-- <div class="main highscores">
+            <button class="btn btn-lg btn-error exit">X</button>
+        </div> -->
+
+        <!-- SETTINGS -->
+        <!-- <div class="main settings">
+            <button class="btn btn-lg btn-error exit">X</button>
+        </div> -->
+
+        <!-- FOOTER -->
+        <footer class="container">
+            <div class="columns">
+                <div class="column col-3 text-left" id="screen" style="color: yellow;"></div>
+                <div class="column col-3 col-ml-auto text-right" id="user"></div>
+            </div>
+            <div class="columns">
+                <div class="column col-3 text-left" id="version">v0.1.0</div>
+                <div class="column col-6 text-center">CODED WITH <span class="fa-solid fa-heart"></span> AND <span class="fa-solid fa-beer-mug-empty"></span> BY <a href="https://klogblog.de/">KLOG</a></div>
+                <div class="column col-3 text-right" id="clientId"></div>
+            </div>
+        </footer>
+        
+        <!-- STARTUP ANIMATION -->
+        <div class="active" id="startupAnimation">
+            <div class="loading loading-lg"></div>
+            <div class="connectionChain">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <span class="connectionChainArrow">
+                    <i class="fa-solid fa-circle"></i>
+                    <i class="fa-solid fa-circle"></i>
+                </span>
+                <i class="fa-solid fa-server"></i>
+                <span class="connectionChainArrow">
+                    <i class="fa-solid fa-circle"></i>
+                    <i class="fa-solid fa-circle"></i>
+                </span>
+                <i class="fa-solid fa-database"></i>
             </div>
         </div>
+
+        <!-- CONNECTION ERROR -->
+        <div class="toast toast-error" id="connectionLost">
+            <p class="lost">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <span class="connectionChainArrow">
+                    <i class="fa-solid fa-circle"></i>
+                    <i class="fa-solid fa-circle"></i>
+                </span>
+                <i class="fa-solid fa-xmark"></i>
+            </p>
+            <p class="re-established">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <span class="connectionChainArrow">
+                    <i class="fa-solid fa-circle"></i>
+                    <i class="fa-solid fa-circle"></i>
+                </span>
+                <i class="fa-solid fa-server"></i>
+            </p>
+        </div>
+
+        <!-- MODAL -->
+        <dialog class="modal" id="firstStart">
+                <!--div class="form-group"></div>
+                    <label class="form-label" for="systemPasswordInput"><b>System Passwort (optional)</b></label>
+                    <input class="form-input" type="password" id="systemPasswordInput">
+                    <label class="form-label" for="systemPasswordVerifyInput">Passwort bestätigen</label>
+                    <input class="form-input" type="password" id="systemPasswordVerifyInput">
+                -->
+            <div class="modalFooter">
+                <button class="btn btn-primary submitInput"></button>
+            </div>
+        </dialog>
     </div>
-
-    <!-- PLAYERS -->
-    <div class="main players">
-        <button class="btn btn-lg btn-error exit">X</button>
-        <nav>
-            <button class="btn playerAdd">
-                <i class="fa-solid fa-plus"></i>
-                <span>Spieler hinzufügen</span>
-            </button>
-            <ul class="playerList">
-                <li>
-                    <a class="p_001">
-                        <div class="avatar badge" data-initial="HA" data-badge="1"></div>
-                        <p class="playerName">Hans</p>
-                        <p class="playerNick">Shotgun</p>
-                    </a>
-                </li>
-                <li>
-                    <a class="p_002">
-                        <div class="avatar badge" data-initial="LA" data-badge="1"></div>
-                        <p class="playerName">Lars</p>
-                        <p class="playerNick">SuperSpin</p>
-                    </a>
-                </li>
-                <li>
-                    <a class="p_003">
-                        <div class="avatar badge" data-initial="ML" data-badge="1"></div>
-                        <p class="playerName">Max</p>
-                        <p class="playerNick"></p>
-                    </a>
-                </li>
-                <li>
-                    <a class="p_004">
-                        <div class="avatar badge" data-initial="ML" data-badge="1"></div>
-                        <p class="playerName">Michel</p>
-                        <p class="playerNick">ImBÄRator</p>
-                    </a>
-                </li>
-                <li>
-                    <a class="p_005">
-                        <div class="avatar badge" data-badge="85"></div>
-                        <p class="playerName">Garry</p>
-                        <p class="playerNick">Flying Scotsman</p>
-                    </a>
-                </li>
-                <li>
-                    <a class="p_006">
-                        <div class="avatar badge" data-initial="LH" data-badge="99"></div>
-                        <p class="playerName">Luke</p>
-                        <p class="playerNick">Cool Hand Luke</p>
-                    </a>
-                </li>
-                <li>
-                    <a class="p_007">
-                        <div class="avatar badge" data-initial="DvB" data-badge="88"></div>
-                        <p class="playerName">Dimitri</p>
-                        <p class="playerNick">The Dreammaker</p>
-                    </a>
-                </li>
-                <li>
-                    <a class="p_008">
-                        <div class="avatar badge" data-initial="GP" data-badge="91"></div>
-                        <p class="playerName">Gerwin</p>
-                        <p class="playerNick">The Iceman</p>
-                    </a>
-                </li>
-                <li>
-                    <a class="p_009">
-                        <div class="avatar badge" data-initial="PW" data-badge="89"></div>
-                        <p class="playerName">Peter</p>
-                        <p class="playerNick">Snakebite</p>
-                    </a>
-                </li>
-                <li>
-                    <a class="p_010">
-                        <div class="avatar badge" data-initial="MS" data-badge="90"></div>
-                        <p class="playerName">Martin</p>
-                        <p class="playerNick">The Wall</p>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="panel">
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <div class="col-4 col-sm-12">
-                        <div class="col-12">                            
-                            <figure class="avatar playerAvatar" data-initial="NN">
-                            </figure>
-                        </div>
-                        <div class="col-12">
-                            <figure class="playerLogo">
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="col-8 col-sm-12">
-                        <div class="form-group">
-                            <div class="col-3">
-                                <label class="form-label currPlayerName" for="currPlayerName">Name</label>
-                            </div>
-                            <div class="col-9">
-                                <input class="form-input" type="text" id="currPlayerName" placeholder="Name">
-                            </div>
-                            <div class="col-3">
-                                <label class="form-label currPlayerLastName" for="currPlayerLastName">Nachname</label>
-                            </div>
-                            <div class="col-9">
-                                <input class="form-input" type="text" id="currPlayerLastName" placeholder="Nachname">
-                            </div>
-                            <div class="col-3">
-                                <label class="form-label currPlayerNickName" for="currPlayerNickName">Spitzname</label>
-                            </div>
-                            <div class="col-9">
-                                <input class="form-input" type="text" id="currPlayerNickName" placeholder="Spitzname">
-                            </div>
-                            <div class="col-3">
-                                <label class="form-label currPlayerAvatar" for="currPlayerAvatar">Avatar</label>
-                            </div>
-                            <div class="col-9">
-                                <input class="form-input" type="file" id="currPlayerAvatar" accept="image/*">
-                            </div>
-                            <div class="col-3">
-                                <label class="form-label currPlayerLogo" for="currPlayerLogo">Logo</label>
-                            </div>
-                            <div class="col-9">
-                                <input class="form-input" type="file" id="currPlayerLogo" accept="image/*">
-                            </div>
-                            <div class="col-3">
-                                <label class="form-label currPlayerColor" for="currPlayerColor">Farbe</label>
-                            </div>
-                            <div class="col-9">
-                                <input class="form-input form-input-color" type="color" id="currPlayerColor">
-                            </div>
-                            <div class="col-3">
-                                <p class="form-label currContrastColor">Kontrastfarbe</p>
-                            </div>
-                            <div class="col-9">
-                                <span class="form-group">
-                                    <label class="form-radio form-inline contrastDark">
-                                        <input type="radio" name="contrast" checked=""><i class="form-icon"></i><span>dunkel</span>
-                                    </label>
-                                    <label class="form-radio form-inline contrastLight">
-                                        <input type="radio" name="contrast"><i class="form-icon"></i><span>hell</span>
-                                    </label>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
-            <button class="btn btn-primary playerSave disabled">
-                <span>Speichern</span>
-            </button>
-        </div>
-    </div>
-
-    <!-- HIGHSCORES -->
-    <!-- <div class="main highscores">
-        <button class="btn btn-lg btn-error exit">X</button>
-    </div> -->
-
-    <!-- SETTINGS -->
-    <!-- <div class="main settings">
-        <button class="btn btn-lg btn-error exit">X</button>
-    </div> -->
-
-    <!-- FOOTER -->
-    <footer class="container">
-        <div class="columns">
-            <div class="column col-3 col-ml-auto text-right" id="user"></div>
-        </div>
-        <div class="columns">
-            <div class="column col-3 text-left" id="version">v0.1.0</div>
-            <div class="column col-6 text-center">CODED WITH <span class="fa-solid fa-heart"></span> AND <span class="fa-solid fa-beer-mug-empty"></span> BY <a href="https://klogblog.de/">KLOG</a></div>
-            <div class="column col-3 text-right" id="clientId"></div>
-        </div>
-    </footer>
-    
-    <!-- STARTUP ANIMATION -->
-    <div class="active" id="startupAnimation">
-        <div class="loading loading-lg"></div>
-        <div class="connectionChain">
-            <i class="fa-solid fa-mobile-screen-button"></i>
-            <span class="connectionChainArrow">
-                <i class="fa-solid fa-circle"></i>
-                <i class="fa-solid fa-circle"></i>
-            </span>
-            <i class="fa-solid fa-server"></i>
-            <span class="connectionChainArrow">
-                <i class="fa-solid fa-circle"></i>
-                <i class="fa-solid fa-circle"></i>
-            </span>
-            <i class="fa-solid fa-database"></i>
-        </div>
-    </div>
-
-    <!-- CONNECTION ERROR -->
-    <div class="toast toast-error" id="connectionLost">
-        <p class="lost">
-            <i class="fa-solid fa-mobile-screen-button"></i>
-            <span class="connectionChainArrow">
-                <i class="fa-solid fa-circle"></i>
-                <i class="fa-solid fa-circle"></i>
-            </span>
-            <i class="fa-solid fa-xmark"></i>
-        </p>
-        <p class="re-established">
-            <i class="fa-solid fa-mobile-screen-button"></i>
-            <span class="connectionChainArrow">
-                <i class="fa-solid fa-circle"></i>
-                <i class="fa-solid fa-circle"></i>
-            </span>
-            <i class="fa-solid fa-server"></i>
-        </p>
-    </div>
-
-    <!-- MODAL -->
-    <dialog class="modal" id="firstStart">
-            <!--div class="form-group"></div>
-                <label class="form-label" for="systemPasswordInput"><b>System Passwort (optional)</b></label>
-                <input class="form-input" type="password" id="systemPasswordInput">
-                <label class="form-label" for="systemPasswordVerifyInput">Passwort bestätigen</label>
-                <input class="form-input" type="password" id="systemPasswordVerifyInput">
-            -->
-        <div class="modalFooter">
-            <button class="btn btn-primary submitInput"></button>
-        </div>
-    </dialog>
+    <script>
+        let debug = document.getElementById('screen');
+        debug.innerHTML = screen.availWidth + ' × ' + screen.availHeight + ' (' + screen.width + ' × ' + screen.height + ')';
+    </script>
 </body>
 </html>
