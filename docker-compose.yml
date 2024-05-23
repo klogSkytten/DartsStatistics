@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  dartsstatistics:
+    image: dartsstatistics
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 9999:9000
+
+#  db:
+#    image: mariadb:11.4-rc 
+#    environment:
+#      MARIADB_ROOT_PASSWORD: example
