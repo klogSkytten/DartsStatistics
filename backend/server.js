@@ -20,28 +20,31 @@ const communication = socket(server);
 
 // START SERVER
 server.listen(port, function(){
-    console.log('Server started. Listening on Port %d.', port);
-
-    // SHOW HTML PAGE
-    app.use(express.static(htmlPath));
+    console.log('Server started.');
 
     // CONNECT TO DATABASE
     db.connection.connect(function(err) {
-        if (err) throw err;
-        console.log("Connection to MySQL established!");
-        
-        // INITIALIZE DATABASES IF NECCESSARY
-        console.log("Checking Databases.");
-        db.connection.query('CREATE DATABASE IF NOT EXISTS DS_games', function (err) {
-            if (err) throw err;
-        });
-        db.connection.query('CREATE DATABASE IF NOT EXISTS DS_players', function (err) {
-            if (err) throw err;
-        });
-        db.connection.query('CREATE DATABASE IF NOT EXISTS DS_settings', function (err) {
-            if (err) throw err;
-        });
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("Connection to MySQL established!");
+
+            // INITIALIZE DATABASES IF NECCESSARY
+            console.log("Checking Databases.");
+            db.connection.query('CREATE DATABASE IF NOT EXISTS DS_games', function (err) {
+                if (err) console.log(err);
+            });
+            db.connection.query('CREATE DATABASE IF NOT EXISTS DS_players', function (err) {
+                if (err) console.log(err);
+            });
+            db.connection.query('CREATE DATABASE IF NOT EXISTS DS_settings', function (err) {
+                if (err) console.log(err);
+            });
+        }
     });
+
+    // SHOW HTML PAGE
+    app.use(express.static(htmlPath));
 })
 
 // COMMUNICATION FUNTIONS

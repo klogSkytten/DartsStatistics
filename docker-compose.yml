@@ -9,13 +9,18 @@ services:
     ports:
       - 9999:9000
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
   db:
     image: mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: tRyP6po*fc2sA$
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 6s
+      retries: 10
   
   phpmyadmin:
     image: phpmyadmin

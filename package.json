@@ -1,6 +1,6 @@
 {
   "name": "dartsstatistics",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Web App to manage your Darts Statistics locally, developed in a Docker Environment.",
   "main": "backend/server.js",
   "repository": {
